@@ -1,0 +1,160 @@
+<style>
+.checked {
+    color: orange;
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRoots!</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function addToCart(productName, price) 
+        {
+               var cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+               var item = { productName: productName, price: price };
+               cart.push(item);
+               sessionStorage.setItem('cart', JSON.stringify(cart));
+               alert('Item added to cart!');
+               displayCart();
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img\download-transformed-removebg-preview.png"alt="">
+        </div>
+          <h1>EcoRoots!  - Plantables</h1>
+        <a href="cartt.html"><img src="cart.svg" alt="Cart" id="cart-icon"></a>
+    </header>
+    
+    <div style="display: flex; 
+                gap: 200px; 
+                background-color: #0a7d34;                
+                justify-content: center; 
+                padding: 10px;
+                align-items: center;
+                align-self: center;" 
+        class="nav">
+        <a href="index.php" style="text-decoration: none; color: #FCF5EF;">Home</a>
+        <a href="aboutus.html" style="text-decoration: none; color: #FCF5EF;">About us</a>
+        <a href="sustainable.html" style="text-decoration: none; color: #FCF5EF;">Sustainable Living</a>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <img src="https://i0.wp.com/theaffordableorganicstore.com/wp-content/uploads/2021/06/Cow-Dung-Powder-100gms.jpg?w=300&ssl=1"alt="">
+            <h3>Cow Dung Powder (100gms) </h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <p>₹19</p>
+            <button onclick="addToCart('Cow Dung Powder (100gms)', 19)">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="https://www.happygroeco.com/wp-content/uploads/2024/05/IMG_20220629_161204_226-300x300.webp"alt="">
+            <h3>Plantable Color Pencils (10pcs)</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <p>₹120</p>
+            <button onclick="addToCart('Plantable Color Pencils (10pc)', 120)">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="https://www.happygroeco.com/wp-content/uploads/2024/05/NewsPaper-in-Box-300x300.jpeg.webp"alt="">
+            <h3>Plantable Newspaper Pencils (10pcs)</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <p>₹120</p>
+            <button onclick="addToCart('Plantable Newspaper Pencils (10pc)', 120)">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="https://www.happygroeco.com/wp-content/uploads/2024/05/Pens_1-300x300.jpg.webp"alt="">
+            <h3>Plantable Pens (10pcs) </h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <p>₹150</p>
+            <button onclick="addToCart('Plantable Pens (10pcs) ', 150)">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="https://i0.wp.com/theaffordableorganicstore.com/wp-content/uploads/2021/09/Saw-Dust-1.png?resize=300%2C300&ssl=1"alt="">
+            <h3>Wood Saw Dust (100gms)</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <p>₹19</p>
+            <button onclick="addToCart('Wood Saw Dust (100gms)', 19)">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="https://i0.wp.com/theaffordableorganicstore.com/wp-content/uploads/2021/06/Coco-Peat-500gm-1.jpg?w=300&ssl=1"alt="">
+            <h3>Coco Peat (500gms)</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <p>₹100</p>
+            <button onclick="addToCart('Coco Peat (500gm)', 100)">Add to Cart</button>
+        </div>
+        
+        <div class="box">
+            <img src="https://www.plantsguru.com/image/cache/data/vegetable%20seeds/plants-guru-vegetable-seeds-Capsicum-Imp.-Green-400x400.jpg"alt="">
+            <h3>Capsicum Andhra Seeds</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <p>₹70</p>
+            <button onclick="addToCart('Capsicum Andhra Seeds', 70)">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="https://www.plantsguru.com/image/cache/catalog/veg-seeds/chilli-grand--superior-10-400x400.jpg"alt="">
+            <h3>Chilli Seeds (40 seeds)</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <p>₹80</p>
+            <button onclick="addToCart('Chilli Seeds (40 seeds)', 80)">Add to Cart</button>
+        </div>
+        
+    </div>
+
+    <footer>
+        <p> &copy; 2024 EcoRoots. All rights reserved.</p>
+    </footer>
+</body>
+</html>

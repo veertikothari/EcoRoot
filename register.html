@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+  
+  background-color: #0a7d34;
+  font-family: Arial, sans-serif;
+    }
+
+    .link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      margin-left: 10px;
+      color: #FCF5EF;
+      text-decoration: none;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 1px;
+    margin-top: 4px
+  }
+  .logo img {
+    height: 8rem;
+    margin-right: 1px;
+    margin-top: 4px
+  }
+
+  .container {
+    width: 500px;
+    margin-left: auto;
+    margin-top: 100px;
+    margin-bottom: 90px;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    color: #FCF5EF;
+    background-color: #0a7d34;  
+  }
+ 
+  h1 {
+    text-align: center;
+    font-size: 24px;
+  }
+ 
+  form {
+    margin: 20px;
+  }
+ 
+  .form-group {
+    margin: 20px;
+  }
+ 
+  .form-control {
+    width: 90%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+ 
+  .btn {
+    width: 84%;
+    padding: 5px;
+    margin-left: 21px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #000000;
+    cursor: pointer;
+    background-color: #ffffff;  
+  }
+ 
+  a {
+    color: #ffffff; /* Default link color */
+    text-decoration: none; /* Removes the underline */
+  }
+
+  a:hover {
+    color: #ffffff; /* Color when the user hovers over the link */
+    text-decoration: underline; /* Adds an underline when hovering */
+  }
+
+  a:visited {
+    color: #ffffff; /* Color for visited links */
+  }
+
+  a:active {
+    color: #ffffff; /* Color when the link is being clicked */
+  }
+
+  </style>
+</head>
+<body style="background-color: #49970999;
+font-family: Arial, sans-serif;">
+
+  <div class="container">
+    <div class="logo">
+      <img src="img\download-transformed-removebg-preview.png" alt="">
+</div>
+    <h1>Register</h1>
+    <form action="connect.php" method="post">
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" class="form-control" id="fullname" name="fullname" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone number</label>
+        <input type="number" class="form-control" id="phone" name="phone"required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password"required>
+      </div>
+      <div class="form-group" required>
+        <label>
+            <input type="radio" name="gender" value="male">
+            Male
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female">
+            Female
+          </label>
+          <label>
+            <input type="radio" name="gender" value="nonbinary">
+            Non-Binary
+          </label>
+        </div>
+      <button type="submit" class="btn btn-primary"><b>Register</b></button>
+    </form>
+    <a href="login.html" class="link">Already a user? Login here</a>
+  </div>
+</body>
+</html>
+
+
+
+

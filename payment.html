@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #49970999;  
+            color: #FCF5EF;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo img {
+            height: 8rem;
+            margin-top: 8px
+        }
+
+        #cartContent {
+            color: #060606;
+            margin: 30px;
+            font-size: large;
+        }
+
+        h2 {
+            color: #0b0b0b;
+            margin: 25px;
+            font-size: x-large;
+        }
+
+        .containerr {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* space between payment options */
+            margin-top: 30px; /* space above payment options */
+        }
+
+        .boxx {
+            text-align: center;
+            padding: 10px;
+            border: 2px solid #0a7d34; /* border for payment options */
+            border-radius: 10px;
+            background-color: #f0f0f0; /* background for boxes */
+            transition: transform 0.2s; /* add transition for hover effect */
+        }
+
+        .boxx:hover {
+            transform: scale(1.05); /* slight zoom on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* shadow effect */
+        }
+
+        button {
+            background-color: #499709; /* button color */
+            color: #FCF5EF;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px; /* space above buttons */
+            transition: background-color 0.3s; /* transition for button color */
+        }
+
+        button:hover {
+            background-color: #367b0d; /* darker shade on hover */
+        }
+
+        footer {
+            margin-top: 100px;
+            bottom: 0;
+            background-color: #0a7d34;   
+            color: #FCF5EF;
+            text-align: center;
+            width: 99%;
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/download-transformed-removebg-preview.png" alt="">
+    </div>
+    <h1>Payment!</h1>
+    <a href="cartt.html"><img src="cart.svg" alt="Cart" id="cart-icon"></a>
+  </header>
+
+  <div id="cartContent"></div>
+  <h2>Cart Total: ₹<span id="cartTotal">0</span></h2>
+    
+  <script>
+        function displayCart() {
+            var cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+            var cartDetails = document.getElementById('cartContent');
+            var cartTotal = document.getElementById('cartTotal');
+
+            if (cart.length > 0) {
+                var cartDetailsHTML = "";
+                var total = 0;
+                var tax = 0;
+                var delivery = 10;
+                for (var i = 0; i < cart.length; i++) {
+                    cartDetailsHTML += "<div>";
+                    cartDetailsHTML += "<p>" + cart[i].productName + " - ₹" + cart[i].price + "</p>";
+                    cartDetailsHTML += "</div>";
+                    total += cart[i].price;
+                    tax = total * 0.05;
+                }
+                cartDetails.innerHTML = cartDetailsHTML;
+                cartDetails.innerHTML += "<p>Cart Total: ₹" + total + "</p>"; 
+                cartDetails.innerHTML += "<p>Tax: ₹" + tax + "</p>"; 
+                cartDetails.innerHTML += "<p>Delivery: ₹10</p>"; 
+                cartTotal.innerHTML = total + tax + delivery;
+                
+            } else {
+                cartDetails.innerHTML = "<p>--- Your cart is currently empty ---</p>";
+                cartTotal.innerHTML = "0";
+            }
+        }
+        displayCart();
+    </script>
+
+  <h2>Select Payment Option</h2>
+  <div class="containerr">
+    <div class="boxx" id="paytm">
+        <img src="img/paytm.png" alt="Paytm" width="195px" height="110px">
+        <button id="paytm-button">Pay with Paytm</button>
+    </div>
+    <div class="boxx" id="google-pay">
+        <img src="img/gp.png" alt="Google Pay" width="175px" height="90px">
+        <button id="google-pay-button">Pay with Google Pay</button>
+    </div>
+    <div class="boxx" id="upi">
+        <img src="img/upi.jfif" alt="UPI" width="175px" height="100px">
+        <button id="upi-button">Pay with UPI</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('paytm-button').addEventListener('click', function() {
+        window.location.href = 'https://paytm.com/pay';
+    });
+
+    document.getElementById('google-pay-button').addEventListener('click', function() {
+        window.location.href = 'https://pay.google.com';
+    });
+
+    document.getElementById('upi-button').addEventListener('click', function() {
+        window.location.href = 'https://upi.app';
+    });
+  </script>
+
+  <footer>
+    <p> &copy; 2024 EcoRoots. All rights reserved.</p>
+</footer>   
+</body>
+</html>

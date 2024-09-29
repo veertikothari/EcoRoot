@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRoots!</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10;
+        }
+        header {
+            background-color: #49970999;
+            color: #FCF5EF;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 8rem;
+            margin-right: 1px;
+            margin-top: 1px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+        }
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            text-align: left;
+        }
+        p {
+            margin: 30px;
+            color: #0b0a0a;
+            font-size: large;
+        }
+        h2 {
+            color: #070706;
+            margin: 30px;
+            font-size: x-large;
+        }
+        footer {
+            background-color: #0a7d34;
+            color: #FCF5EF;
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+            bottom: 0;
+        }
+        
+        #cart-icon {
+            position: absolute;
+            top: 45px;
+            right: 30px;
+            width: 30px;
+        }
+        button {
+            display: block;
+            background-color: #2a3d2a;
+            color: #FCF5EF;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-left: 30px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        .delete-btn {
+            background-color: #ff4c4c;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img\download-transformed-removebg-preview.png" alt="EcoRoots logo">
+        </div>
+        <h1>EcoRoots!</h1>
+        <a href="cartt.html"><img src="cart.svg" alt="Cart" id="cart-icon"></a>
+    </header>
+    <div style="display: flex; 
+        gap: 200px; 
+        background-color: #0a7d34;                
+        justify-content: center; 
+        padding: 10px;
+        align-items: center;
+        align-self: center;" 
+        class="nav">
+        <a href="index.php" style="text-decoration: none; color: #FCF5EF;">Home</a>
+        <a href="aboutus.html" style="text-decoration: none; color: #FCF5EF;">About us</a>
+        <a href="sustainable.html" style="text-decoration: none; color: #FCF5EF;">Sustainable Living</a>
+        <a href="plantables.html" style="text-decoration: none; color: #FCF5EF;">Plantables</a>
+    </div>
+              
+    <div id="cartContent"></div>
+    <h2>Cart Total: ₹<span id="cartTotal">0</span></h2>
+
+    <script>
+        function displayCart() {
+            var cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+            var cartDetails = document.getElementById('cartContent');
+            var cartTotal = document.getElementById('cartTotal');
+
+            if (cart.length > 0) {
+                var cartDetailsHTML = "";
+                var total = 0;
+                for (var i = 0; i < cart.length; i++) {
+                    cartDetailsHTML += "<div>";
+                    cartDetailsHTML += "<p>" + cart[i].productName + " - ₹" + cart[i].price + 
+                        "<button class='delete-btn' onclick='removeFromCart(" + i + ")'>Delete</button></p>";
+                    cartDetailsHTML += "</div>";
+                    total += cart[i].price;
+                }
+                cartDetails.innerHTML = cartDetailsHTML;
+                cartTotal.innerHTML = total;
+                
+            } else {
+                cartDetails.innerHTML = "<p> --- Your cart is currently empty ---</p>";
+                cartTotal.innerHTML = "0";
+            }
+        }
+
+        // Function to remove item from cart
+        function removeFromCart(index) {
+            var cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+            if (cart.length > 0) {
+                cart.splice(index, 1);  // Remove the item at the specified index
+                sessionStorage.setItem('cart', JSON.stringify(cart));  // Update the cart in sessionStorage
+                displayCart();  // Re-render the cart
+            }
+        }
+
+        displayCart();
+    </script>
+
+    <a href="payment.html">
+        <button>
+            Go to payment
+        </button>
+    </a>
+
+    <footer>
+      <p> &copy; 2024 EcoRoots. All rights reserved.</p>
+    </footer>   
+</body>
+</html>

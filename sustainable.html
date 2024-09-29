@@ -1,0 +1,162 @@
+<style>
+    .checked {
+        color: orange;
+      }
+      
+    </style>
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRoots</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function addToCart(productName, price) 
+        {
+               var cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+               var item = { productName: productName, price: price };
+               cart.push(item);
+               sessionStorage.setItem('cart', JSON.stringify(cart));
+               alert('Item added to cart!');
+               displayCart();
+           }
+         
+         
+      </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+              <img src="img\download-transformed-removebg-preview.png" alt="">
+        </div>
+          <h1>EcoRoots!  - Sustainable Living</h1>
+        <a href="cartt.html"><img src="cart.svg" alt="Cart" id="cart-icon"></a>
+    </header>
+
+    <div style="display: flex; 
+                gap: 200px; 
+                background-color: #0a7d34;                
+                justify-content: center; 
+                padding: 10px;
+                align-items: center;
+                align-self: center;" 
+        class="nav">
+        <a href="index.php" style="text-decoration: none; color: #FCF5EF;">Home</a>
+        <a href="aboutus.html" style="text-decoration: none; color: #FCF5EF;">About us</a>
+        <a href="plantables.html" style="text-decoration: none; color: #FCF5EF;">Plantables</a>
+    </div>
+    
+    <div class="container">
+        <div class="box">
+            <img src="https://i0.wp.com/theaffordableorganicstore.com/wp-content/uploads/2021/06/2114760792.jpg?resize=300%2C300&ssl=1" alt="Item 1">
+            <h3>Anti Hairfall Neem Wooden Comb (1pc)</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <p>₹94</p>
+            <button onclick="addToCart('Anti Hairfall Neem Wooden Comb (1pc)', 94)">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="https://i0.wp.com/theaffordableorganicstore.com/wp-content/uploads/2021/06/1713176194.jpg?resize=300%2C300&ssl=1"alt="">
+            <h3>Bamboo Toothbrush</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <p>₹85</p>
+            <button onclick="addToCart('Bamboo Toothbrush', 85)">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="https://i0.wp.com/theaffordableorganicstore.com/wp-content/uploads/2021/06/1746061643.jpg?resize=300%2C300&ssl=1"alt="">
+            <h3>Wooden Spoon (1pc)</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <p>₹5</p>
+            <button onclick="addToCart('Wooden Spoon (1pc)', 5)">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="https://i0.wp.com/theaffordableorganicstore.com/wp-content/uploads/2021/06/2114773472.jpg?resize=300%2C300&ssl=1"alt="">
+            <h3>Wooden Tongue Cleaner (1pc)</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <p>₹47</p>
+            <button onclick="addToCart('Wooden Tongue Cleaner (1pc)', 47)">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="https://i0.wp.com/theaffordableorganicstore.com/wp-content/uploads/2021/06/2114734988.jpg?resize=300%2C300&ssl=1"alt="">
+            <h3>Natural Reusable Bamboo Straws (1pc)</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <p>₹47</p>
+            <button onclick="addToCart('Natural Reusable Bamboo Straws (1pc)', 47)">Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="https://i0.wp.com/theaffordableorganicstore.com/wp-content/uploads/2023/11/Ear-Bud-1.webp?resize=441%2C441&ssl=1"alt="">
+            <h3>Cotton Ear Cleaning Buds (70pc)</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <p>₹70</p>
+            <button onclick="addToCart('Cotton Ear Cleaning Buds (70pc)', 70)">Add to Cart</button>
+        </div>
+       
+        <div class="box">
+            <img src="https://i0.wp.com/theaffordableorganicstore.com/wp-content/uploads/2021/12/AnyConv.com__2125645695-300x300-1.webp?resize=300%2C300&ssl=1"alt="">
+            <h3>Sustainable Lifestyle Pack (1Pack)</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star "></span>
+            <p>₹285</p>
+            <button onclick="addToCart('Sustainable Lifestyle Pack (1Pack)', 285)">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="https://i0.wp.com/theaffordableorganicstore.com/wp-content/uploads/2021/06/2193296434.jpg?resize=300%2C300&ssl=1"alt="">
+            <h3>Loofah (1pc)</h3>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <p>₹47</p>
+            <button onclick="addToCart('Loofah (1pc)', 47)">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p> &copy; 2024 EcoRoots. All rights reserved.</p>
+    </footer>
+</body>
+</html>
